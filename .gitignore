@@ -1,0 +1,5 @@
+go/.vscode/
+go/pkg/
+go/bin/dlv.exe
+go/bin/go-outline.exe
+go/bin/gopls.exe
