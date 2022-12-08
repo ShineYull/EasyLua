@@ -1,3 +1,11 @@
+// @Title	api_access.go
+// @Description
+//
+//	The external call API for the acquisition
+//	operation of the lua stack value.
+//
+// @Author	ShineYu 2022/12/08 23:52:00
+// @Update	ShineYu 2022/12/08 23:52:00
 package state
 
 import (
@@ -5,7 +13,11 @@ import (
 	. "luago/api"
 )
 
-// [-0, +0, –]
+// @title	TypeName(tp LuaType)
+// @description	Lua type is converted to the corresponding string representation. [-0, +0, –]
+// @auth	ShineYu	2022/12/08 23:52:00
+// @param	tp	LuaType	The lua Type.
+// @return		string	String of type.
 func (self *luaState) TypeName(tp LuaType) string {
 	switch tp {
 	case LUA_TNONE:
@@ -29,7 +41,11 @@ func (self *luaState) TypeName(tp LuaType) string {
 	}
 }
 
-// [-0, +0, –]
+// @title	Type(idx int)
+// @description	Returns the type of the value according to the index. [-0, +0, –]
+// @auth	ShineYu	2022/12/08 23:52:00
+// @param	idx	int		The index of stack.
+// @return		LuaType	The type of vale.
 func (self *luaState) Type(idx int) LuaType {
 	if self.stack.isValid(idx) {
 		val := self.stack.get(idx)
